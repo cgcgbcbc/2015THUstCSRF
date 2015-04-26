@@ -1,1 +1,1 @@
-alert(1);
+console.log('you are attacked by xss');
