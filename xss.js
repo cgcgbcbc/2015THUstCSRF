@@ -3,8 +3,6 @@ if (window.console.log) {
   console.log('you are attacked by xss');
 }
 
-if (document.baseURI.indexOf('sns') >= 0) return;
-
 var xhr;
 
 if (window.XMLHttpRequest) {
