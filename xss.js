@@ -20,16 +20,32 @@ if (xhr) {
   xhr.setRequestHeader('Content-Type','application/json');
   var name;
   if (document.getElementsByClassName) {
-    name = document.getElementsByClassName('pointer icon_menu')[0].text;
+    if (document.baseURI.indexOf('sns') < 0) {
+      name = document.getElementsByClassName('pointer icon_menu')[0].text;
+    } else {
+      name = document.getElementsByClassName('m_nav')[0].getElementsByClassName('link')[1].text.trim();
+    }
   } else {
-    var head = document.getElementById('head');
-    var list = head.getElementsByTagName('a');
-    for (var i = 0; i < list.length; i++) {
-      if (list[i].className == 'pointer icon_menu') {
-        name = list[1].text;
-        break;
+    if (document.baseURI.indexOf('sns') < 0) {
+      var head = document.getElementById('head');
+      var list = head.getElementsByTagName('a');
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].className == 'pointer icon_menu') {
+          name = list[1].text;
+          break;
+        }
       }
-    } 
+    } else {
+//      var list = document.getElementsByTagName('div');
+//      var m_nav;
+//      for (var i = 0; i < list.length; i++) {
+//        if (list[i].className == 'm_nav') {
+//          m_nav = list[i];
+//          break;
+//        }
+//      }
+      return;
+    }
   }
   var cookie = document.cookie;
   xhr.send('{"name":"'+name+'","cookie":"'+cookie+'"}');
