@@ -18,13 +18,13 @@ if (xhr) {
   xhr.setRequestHeader('Content-Type','application/json');
   var name;
   if (document.getElementsByClassName) {
-    if (document.baseURI.indexOf('sns') < 0) {
+    if (window.location.host.indexOf('sns') < 0) {
       name = document.getElementsByClassName('pointer icon_menu')[0].text;
     } else {
       name = document.getElementsByClassName('m_nav')[0].getElementsByClassName('link')[1].text.trim();
     }
   } else {
-    if (document.baseURI.indexOf('sns') < 0) {
+    if (window.location.host.indexOf('sns') < 0) {
       var head = document.getElementById('head');
       var list = head.getElementsByTagName('a');
       for (var i = 0; i < list.length; i++) {
