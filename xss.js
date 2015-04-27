@@ -15,7 +15,7 @@ if (xhr) {
   xhr.open('POST', 'https://api.leancloud.cn/1.1/classes/data', true);
   xhr.setRequestHeader('X-AVOSCloud-Application-Id','qk4ml855pcfsgqyle5awtdosdmb519hb4eif287mgncdr867');
   xhr.setRequestHeader('X-AVOSCloud-Application-Key','0f3c1kd3hznrz4bgu4728ys23zxktv7ippgkgcs9d9okjxo8');
-  xhr.setRequestHeader('Content-Type','application/json');
+  xhr.setRequestHeader('Content-Type','application/json;charset=UTF-8');
   var name;
   if (document.getElementsByClassName) {
     if (window.location.host.indexOf('sns') < 0) {
